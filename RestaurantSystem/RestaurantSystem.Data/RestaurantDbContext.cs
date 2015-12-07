@@ -24,5 +24,16 @@
         {
             return new RestaurantDbContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>()
+                .HasOptional(x => x.Cart)
+                .WithRequired(x => x.Owner)
+                .WillCascadeOnDelete(false);
+
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
