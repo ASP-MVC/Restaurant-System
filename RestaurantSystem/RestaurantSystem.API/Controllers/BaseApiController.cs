@@ -1,18 +1,12 @@
-﻿using RestaurantSystem.Data.UoW;
-using RestaurantSystem.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using System.Web.Routing;
-
-namespace RestaurantSystem.API.Controllers
+﻿namespace RestaurantSystem.API.Controllers
 {
+    using System.Web.Http;
+
+    using RestaurantSystem.Data.UoW;
+
     public abstract class BaseApiController : ApiController
     {
-        public BaseApiController(IRestaurantData data)
+        protected BaseApiController(IRestaurantData data)
         {
             this.Data = data;
         }
