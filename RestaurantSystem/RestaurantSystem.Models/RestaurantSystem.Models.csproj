@@ -52,7 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cart.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="FoodType.cs" />
+    <Compile Include="Meal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubCategory.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
