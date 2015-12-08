@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{8388C763-BEC2-4FA6-B625-8DFB62DD2991}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantSystem.API", "RestaurantSystem.API\RestaurantSystem.API.csproj", "{18B7FAB0-290A-4C99-BC8C-E68D5C090CA5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{3777FD63-02C0-4411-A38A-06A1085B9108}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{5F214F8B-66C2-454A-A26D-4A7D39573C8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantSystem.Infrastructure", "RestaurantSystem.Infrastructure\RestaurantSystem.Infrastructure.csproj", "{981AE569-9DFA-4A7F-8FCE-677CBA62A335}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,10 @@ Global
 		{18B7FAB0-290A-4C99-BC8C-E68D5C090CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18B7FAB0-290A-4C99-BC8C-E68D5C090CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18B7FAB0-290A-4C99-BC8C-E68D5C090CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{981AE569-9DFA-4A7F-8FCE-677CBA62A335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{981AE569-9DFA-4A7F-8FCE-677CBA62A335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{981AE569-9DFA-4A7F-8FCE-677CBA62A335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{981AE569-9DFA-4A7F-8FCE-677CBA62A335}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,5 +49,6 @@ Global
 		{B3C67F29-6007-4458-A762-2369D53ABA72} = {8388C763-BEC2-4FA6-B625-8DFB62DD2991}
 		{90CD90C3-154D-4BAE-90D9-E1C45647B670} = {8388C763-BEC2-4FA6-B625-8DFB62DD2991}
 		{18B7FAB0-290A-4C99-BC8C-E68D5C090CA5} = {6A1F0830-C146-4775-960A-D3E084A12651}
+		{981AE569-9DFA-4A7F-8FCE-677CBA62A335} = {5F214F8B-66C2-454A-A26D-4A7D39573C8F}
 	EndGlobalSection
 EndGlobal

@@ -55,8 +55,7 @@
             }
         }
 
-        public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get;
-        }
+        public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; protected set; }
 
         // GET api/Account/UserInfo
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
