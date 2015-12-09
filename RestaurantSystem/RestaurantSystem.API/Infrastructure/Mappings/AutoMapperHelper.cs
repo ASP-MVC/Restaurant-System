@@ -51,6 +51,8 @@ namespace RestaurantSystem.API.Infrastructure.Mappings
                 .ForMember(s => s.Meals, opt => opt.MapFrom(s => s.Meals));
 
             //Meal
+            Mapper.CreateMap<Meal, MealBindingModel>().ReverseMap();
+            Mapper.CreateMap<Meal, MealUpdateBindingModel>().ReverseMap();
             Mapper.CreateMap<Meal, MealViewModel>()
                 .ForMember(m => m.SubCategoryName, opt => opt.MapFrom(m => m.SubCategory.Title));
         }
