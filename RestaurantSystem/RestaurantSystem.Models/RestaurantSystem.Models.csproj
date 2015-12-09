@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="BindingModel\CategoryBindingModel.cs" />
     <Compile Include="BindingModel\SubCategoryBindingModel.cs" />
+    <Compile Include="BindingModel\SubCategoryUpdateBindingModel.cs" />
     <Compile Include="Cart.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="FoodType.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="SubCategory.cs" />
     <Compile Include="User.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\MealViewModel.cs" />
     <Compile Include="ViewModels\SubCategoryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

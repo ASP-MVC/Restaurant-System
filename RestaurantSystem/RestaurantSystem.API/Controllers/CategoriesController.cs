@@ -30,6 +30,22 @@
             return this.Ok(categories);
         }
 
+        [HttpGet]
+        public IHttpActionResult GetAllSubCategories(int id)
+        {
+            var dbCategory = this.FindCategoryById(id);
+            if (dbCategory == null)
+            {
+                return this.NotFound();
+            }
+            var subCategories =
+                this.Data.SubCategories.All()
+                .Where(s => s.CategoryId == id)
+                .ProjectTo<SubCategoryViewModel>()
+                .ToList();
+            return this.Ok(subCategories);
+        }
+
         //[Authorize]
         [HttpPost]
         public IHttpActionResult CreateCategory(CategoryBindingModel model)

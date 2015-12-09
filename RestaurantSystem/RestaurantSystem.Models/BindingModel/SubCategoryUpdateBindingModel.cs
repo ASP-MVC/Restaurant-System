@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.Models.BindingModel
 {
-    public class SubCategoryBindingModel : IMapTo<SubCategory>
+    public class SubCategoryUpdateBindingModel : IMapTo<SubCategory>
     {
-        [Required]
         [StringLength(255, MinimumLength = 1)]
         public string Title { get; set; }
 
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
     }
 }

@@ -24,12 +24,40 @@ namespace RestaurantSystem.API.Controllers
         public IHttpActionResult GetAll()
         {
             var subCategories =
-                this.Data.Categories.All()
+                this.Data.SubCategories.All()
                 .OrderBy(x => x.Id)
                 .ProjectTo<SubCategoryViewModel>()
                 .ToList();
 
             return this.Ok(subCategories);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetSubCategoryById(int id)
+        {
+            var dbSubCategory = this.FindSubCategoryById(id);
+            if (dbSubCategory == null)
+            {
+                return this.NotFound();
+            }
+            var subCategoryVM = Mapper.Map<SubCategory, SubCategoryViewModel>(dbSubCategory);
+            return this.Ok(subCategoryVM);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetSubCategoryMeals(int id)
+        {
+            var dbSubCategory = this.FindSubCategoryById(id);
+            if (dbSubCategory == null)
+            {
+                return this.NotFound();
+            }
+            var meals =
+                this.Data.Meals.All()
+                .Where(m => m.SubCategoryId == id)
+                .ProjectTo<MealViewModel>()
+                .ToList();
+            return this.Ok(meals);
         }
 
         //[Authorize]
@@ -49,22 +77,10 @@ namespace RestaurantSystem.API.Controllers
             this.Data.SaveChanges();
             return this.Ok();
         }
-
-        [HttpGet]
-        public IHttpActionResult GetSubCategoryById(int id)
-        {
-            var dbSubCategory = this.FindSubCategoryById(id);
-            if (dbSubCategory == null)
-            {
-                return this.NotFound();
-            }
-            var subCategoryVM = Mapper.Map<SubCategory, SubCategoryViewModel>(dbSubCategory);
-            return this.Ok(subCategoryVM);
-        }
-
+        
         //[Authorize]
         [HttpPut]
-        public IHttpActionResult UpdateSubCategory(int id, SubCategoryBindingModel model)
+        public IHttpActionResult UpdateSubCategory(int id, SubCategoryUpdateBindingModel model)
         {
             if (model == null)
             {
@@ -79,7 +95,19 @@ namespace RestaurantSystem.API.Controllers
             {
                 return this.NotFound();
             }
-            //dbSubCategory.Title = model.Title;
+            if (model.Title != null)
+            {
+                dbSubCategory.Title = model.Title;
+            }
+            if (model.CategoryId != null)
+            {
+                var catId = Convert.ToInt32(model.CategoryId);
+                var categoryExists = this.Data.Categories.All().Any(c => c.Id == catId);
+                if (categoryExists)
+                {
+                    dbSubCategory.CategoryId = catId;
+                }
+            }
             this.Data.SubCategories.Update(dbSubCategory);
             this.Data.SaveChanges();
             return this.Ok();

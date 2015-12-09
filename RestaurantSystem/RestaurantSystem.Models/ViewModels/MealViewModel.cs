@@ -7,16 +7,18 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.Models.ViewModels
 {
-    public class SubCategoryViewModel : IMapFrom<SubCategory>
+    public class MealViewModel : IMapFrom<Meal>
     {
         public int Id { get; set; }
 
         public string Title { get; set; }
 
-        public int CategoryId { get; set; }
+        public string Description { get; set; }
 
-        public string CategoryTitle { get; set; }
+        public FoodType FoodType { get; set; }
 
-        public IEnumerable<MealViewModel> Meals { get; set; }
+        public decimal Price { get; set; }
+
+        public string SubCategoryName { get; set; }
     }
 }
