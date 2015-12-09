@@ -40,6 +40,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
@@ -232,6 +236,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Mappings\AutoMapperHelper.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -299,6 +304,10 @@
     <ProjectReference Include="..\RestaurantSystem.Data\RestaurantSystem.Data.csproj">
       <Project>{b3c67f29-6007-4458-a762-2369d53aba72}</Project>
       <Name>RestaurantSystem.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RestaurantSystem.Infrastructure\RestaurantSystem.Infrastructure.csproj">
+      <Project>{981ae569-9dfa-4a7f-8fce-677cba62a335}</Project>
+      <Name>RestaurantSystem.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\RestaurantSystem.Models\RestaurantSystem.Models.csproj">
       <Project>{90cd90c3-154d-4bae-90d9-e1c45647b670}</Project>
